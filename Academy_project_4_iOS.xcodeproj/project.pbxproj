@@ -13,6 +13,7 @@
 		181CF6402738FFA900204E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181CF63E2738FFA900204E9F /* Main.storyboard */; };
 		181CF6422738FFAB00204E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181CF6412738FFAB00204E9F /* Assets.xcassets */; };
 		181CF6452738FFAB00204E9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181CF6432738FFAB00204E9F /* LaunchScreen.storyboard */; };
+		181CF64E2739001700204E9F /* ArthouseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CF64D2739001700204E9F /* ArthouseInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		181CF6412738FFAB00204E9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		181CF6442738FFAB00204E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		181CF6462738FFAB00204E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181CF64D2739001700204E9F /* ArthouseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArthouseInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				181CF6412738FFAB00204E9F /* Assets.xcassets */,
 				181CF6432738FFAB00204E9F /* LaunchScreen.storyboard */,
 				181CF6462738FFAB00204E9F /* Info.plist */,
+				181CF64D2739001700204E9F /* ArthouseInfo.swift */,
 			);
 			path = Academy_project_4_iOS;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181CF64E2739001700204E9F /* ArthouseInfo.swift in Sources */,
 				181CF63D2738FFA900204E9F /* ViewController.swift in Sources */,
 				181CF6392738FFA900204E9F /* AppDelegate.swift in Sources */,
 				181CF63B2738FFA900204E9F /* SceneDelegate.swift in Sources */,
