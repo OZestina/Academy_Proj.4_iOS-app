@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18167CA4273A79850086B877 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18167CA3273A79850086B877 /* MovieDetail.swift */; };
+		18167CA7273A79AC0086B877 /* Webpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18167CA6273A79AC0086B877 /* Webpage.swift */; };
 		181CF6392738FFA900204E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CF6382738FFA900204E9F /* AppDelegate.swift */; };
 		181CF63B2738FFA900204E9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CF63A2738FFA900204E9F /* SceneDelegate.swift */; };
 		181CF63D2738FFA900204E9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CF63C2738FFA900204E9F /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18167CA3273A79850086B877 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		18167CA6273A79AC0086B877 /* Webpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webpage.swift; sourceTree = "<group>"; };
 		181CF6352738FFA900204E9F /* Academy_project_4_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Academy_project_4_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		181CF6382738FFA900204E9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		181CF63A2738FFA900204E9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 				181CF6A5273A6FD300204E9F /* movie5.png */,
 				181CF6A6273A6FD300204E9F /* movie6.jpg */,
 				181CF63E2738FFA900204E9F /* Main.storyboard */,
+				18167CA6273A79AC0086B877 /* Webpage.swift */,
 				5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */,
 				5141FE7F2739624B00B10848 /* ListController.swift */,
 				5141FE7D27395F7B00B10848 /* UserController.swift */,
@@ -93,6 +98,7 @@
 				181CF6432738FFAB00204E9F /* LaunchScreen.storyboard */,
 				181CF6462738FFAB00204E9F /* Info.plist */,
 				181CF64D2739001700204E9F /* ArthouseInfo.swift */,
+				18167CA3273A79850086B877 /* MovieDetail.swift */,
 			);
 			path = Academy_project_4_iOS;
 			sourceTree = "<group>";
@@ -178,8 +184,10 @@
 				181CF63D2738FFA900204E9F /* ViewController.swift in Sources */,
 				5141FE7E27395F7B00B10848 /* UserController.swift in Sources */,
 				181CF6392738FFA900204E9F /* AppDelegate.swift in Sources */,
+				18167CA7273A79AC0086B877 /* Webpage.swift in Sources */,
 				181CF63B2738FFA900204E9F /* SceneDelegate.swift in Sources */,
 				5141FE802739624B00B10848 /* ListController.swift in Sources */,
+				18167CA4273A79850086B877 /* MovieDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
