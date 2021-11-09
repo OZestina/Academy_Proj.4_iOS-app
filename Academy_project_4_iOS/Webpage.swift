@@ -8,23 +8,38 @@
 import UIKit
 import WebKit
 
-class Webpage: UIViewController {
+class Webpage: UIViewController, WKNavigationDelegate {
 
+    @IBOutlet var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //초기 로딩 페이지 지정 (예매 페이지)
+        loadWebPage("https://www.arthousemomo.co.kr/pages/ti.php")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //입력된 주소의 페이지 로드
+    func loadWebPage(_ url:String) {
+        let myUrl = URL(string: url)
+        let myRequest = URLRequest(url: myUrl!)
+        webView.load(myRequest)
     }
-    */
 
+    @IBAction func btnPageClose(_ sender: UIButton) {
+        self.presentingViewController?.dismiss(animated: true)
+    }
+    
+    @IBAction func btnGoBack(_ sender: UIBarButtonItem) {
+        webView.goBack()
+    }
+    @IBAction func btnGoHome(_ sender: UIBarButtonItem) {
+        loadWebPage("https://www.arthousemomo.co.kr/")
+    }
+    @IBAction func btnRefresh(_ sender: UIBarButtonItem) {
+        webView.reload()
+    }
+    @IBAction func btnGoForward(_ sender: UIBarButtonItem) {
+        webView.goForward()
+    }
+    
 }
