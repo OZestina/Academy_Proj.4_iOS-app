@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -640,14 +641,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="님의 계정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPZ-Nb-3Ji">
-                                        <rect key="frame" x="268" y="14.5" width="63.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님의 계정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPZ-Nb-3Ji">
+                                        <rect key="frame" x="278.5" y="14.5" width="63.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="OOO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McK-Mk-ILg">
-                                        <rect key="frame" x="229.5" y="14.5" width="38.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OOO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McK-Mk-ILg">
+                                        <rect key="frame" x="240" y="14.5" width="38.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -736,16 +737,20 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51M-nP-RxJ">
-                                        <rect key="frame" x="10" y="9.5" width="101" height="31"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51M-nP-RxJ">
+                                        <rect key="frame" x="10" y="9.5" width="109" height="31"/>
+                                        <state key="normal" title="회원정보수정/삭제">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="updelbtn:" destination="kiE-KH-c29" eventType="touchUpInside" id="QFQ-a7-n1x"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-qK-EVU">
-                                        <rect key="frame" x="331.5" y="9" width="72.5" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-qK-EVU">
+                                        <rect key="frame" x="352" y="10" width="52" height="30"/>
+                                        <state key="normal" title="로그아웃">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="logoutbtn:" destination="kiE-KH-c29" eventType="touchUpInside" id="mI6-HJ-YCY"/>
                                         </connections>
@@ -757,13 +762,14 @@
                                     <constraint firstAttribute="bottom" secondItem="6Lp-GB-L4S" secondAttribute="bottom" id="0Pw-t5-YVv"/>
                                     <constraint firstItem="51M-nP-RxJ" firstAttribute="leading" secondItem="P8B-PT-pze" secondAttribute="leading" constant="10" id="0dU-vi-fjb"/>
                                     <constraint firstItem="McK-Mk-ILg" firstAttribute="top" secondItem="P8B-PT-pze" secondAttribute="top" constant="14.5" id="6bi-Xt-dhs"/>
-                                    <constraint firstItem="McK-Mk-ILg" firstAttribute="leading" secondItem="51M-nP-RxJ" secondAttribute="trailing" constant="118.5" id="7P7-Qa-lAQ"/>
                                     <constraint firstItem="6Lp-GB-L4S" firstAttribute="leading" secondItem="P8B-PT-pze" secondAttribute="leading" id="7mR-to-1TK"/>
-                                    <constraint firstItem="EN7-qK-EVU" firstAttribute="top" secondItem="P8B-PT-pze" secondAttribute="top" constant="9" id="9VP-OH-NVL"/>
+                                    <constraint firstItem="EN7-qK-EVU" firstAttribute="top" secondItem="P8B-PT-pze" secondAttribute="top" constant="10" id="9VP-OH-NVL"/>
                                     <constraint firstAttribute="trailing" secondItem="6Lp-GB-L4S" secondAttribute="trailing" id="Btv-7u-ARc"/>
+                                    <constraint firstItem="McK-Mk-ILg" firstAttribute="leading" secondItem="51M-nP-RxJ" secondAttribute="trailing" constant="121" id="LC2-wr-yzO"/>
                                     <constraint firstAttribute="trailing" secondItem="EN7-qK-EVU" secondAttribute="trailing" constant="10" id="Np6-sD-Rf8"/>
-                                    <constraint firstItem="EN7-qK-EVU" firstAttribute="leading" secondItem="RPZ-Nb-3Ji" secondAttribute="trailing" id="Nzc-bA-tXT"/>
+                                    <constraint firstItem="EN7-qK-EVU" firstAttribute="leading" secondItem="RPZ-Nb-3Ji" secondAttribute="trailing" constant="10" id="Nzc-bA-tXT"/>
                                     <constraint firstItem="RPZ-Nb-3Ji" firstAttribute="leading" secondItem="McK-Mk-ILg" secondAttribute="trailing" id="Ys7-Ea-9Ua"/>
+                                    <constraint firstItem="6Lp-GB-L4S" firstAttribute="top" secondItem="EN7-qK-EVU" secondAttribute="bottom" constant="10" id="bjL-vb-VeU"/>
                                     <constraint firstAttribute="trailing" secondItem="veF-Br-Ldc" secondAttribute="trailing" id="d6A-eO-mG7"/>
                                     <constraint firstItem="veF-Br-Ldc" firstAttribute="top" secondItem="P8B-PT-pze" secondAttribute="top" id="icg-e6-Vel"/>
                                     <constraint firstItem="RPZ-Nb-3Ji" firstAttribute="top" secondItem="P8B-PT-pze" secondAttribute="top" constant="14.5" id="ipb-e7-O7m"/>
