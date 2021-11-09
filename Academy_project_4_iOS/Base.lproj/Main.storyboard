@@ -255,19 +255,38 @@
                                 <state key="normal">
                                     <imageReference key="image" image="xmark.circle" catalog="system" symbolScale="large"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnPageClose:" destination="kNE-og-GTB" eventType="touchUpInside" id="zni-PC-V1u"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Krx-X4-5If">
                                 <rect key="frame" x="0.0" y="774" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dKc-l5-PLT"/>
-                                    <barButtonItem title="Item" image="arrowshape.turn.up.backward.fill" catalog="system" id="3SV-oM-y0w"/>
+                                    <barButtonItem title="Item" image="arrowshape.turn.up.backward.fill" catalog="system" id="3SV-oM-y0w">
+                                        <connections>
+                                            <action selector="btnGoBack:" destination="kNE-og-GTB" id="25g-Yd-Hi2"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ton-iQ-MD2"/>
-                                    <barButtonItem title="Item" image="house.fill" catalog="system" id="PFF-Ph-yPp"/>
+                                    <barButtonItem title="Item" image="house.fill" catalog="system" id="PFF-Ph-yPp">
+                                        <connections>
+                                            <action selector="btnGoHome:" destination="kNE-og-GTB" id="vnE-JK-CGp"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="smI-t0-dQb"/>
-                                    <barButtonItem title="Item" image="arrow.clockwise" catalog="system" id="lx9-WI-ZHN"/>
+                                    <barButtonItem title="Item" image="arrow.clockwise" catalog="system" id="lx9-WI-ZHN">
+                                        <connections>
+                                            <action selector="btnRefresh:" destination="kNE-og-GTB" id="yJY-mp-8kG"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="oyd-Cy-oa3"/>
-                                    <barButtonItem title="Item" image="arrowshape.turn.up.forward.fill" catalog="system" id="0Ni-Je-653"/>
+                                    <barButtonItem title="Item" image="arrowshape.turn.up.forward.fill" catalog="system" id="0Ni-Je-653">
+                                        <connections>
+                                            <action selector="btnGoForward:" destination="kNE-og-GTB" id="Edp-d7-wmC"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MZa-6s-jJT"/>
                                 </items>
                             </toolbar>
@@ -285,6 +304,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="UlA-Th-J0n"/>
+                    <connections>
+                        <outlet property="webView" destination="Bb9-Nd-S57" id="CeB-id-SBE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soE-cz-atz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
