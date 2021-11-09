@@ -15,4 +15,17 @@ class ListController: UIViewController {
         
     }
     
+    @IBAction func logoutbtn(_ sender: UIButton) {
+        guard let go = storyboard?.instantiateViewController(withIdentifier: "main") else {
+            return
+        }
+        self.present(go, animated: true, completion: nil)
+    }
+    
+    @IBAction func updelbtn(_ sender: UIButton) {
+        guard let go = storyboard?.instantiateViewController(withIdentifier: "page4") else {
+            return
+        }
+        self.present(go, animated: true, completion: nil)
+    }
 }

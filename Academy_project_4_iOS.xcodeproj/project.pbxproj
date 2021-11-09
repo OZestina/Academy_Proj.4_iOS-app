@@ -16,6 +16,7 @@
 		181CF64E2739001700204E9F /* ArthouseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CF64D2739001700204E9F /* ArthouseInfo.swift */; };
 		5141FE7E27395F7B00B10848 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141FE7D27395F7B00B10848 /* UserController.swift */; };
 		5141FE802739624B00B10848 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141FE7F2739624B00B10848 /* ListController.swift */; };
+		5141FEBF273A6CAD00B10848 /* UpdateDeleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		181CF64D2739001700204E9F /* ArthouseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArthouseInfo.swift; sourceTree = "<group>"; };
 		5141FE7D27395F7B00B10848 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		5141FE7F2739624B00B10848 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeleteController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				181CF63A2738FFA900204E9F /* SceneDelegate.swift */,
 				181CF63C2738FFA900204E9F /* ViewController.swift */,
 				181CF63E2738FFA900204E9F /* Main.storyboard */,
+				5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */,
 				5141FE7F2739624B00B10848 /* ListController.swift */,
 				5141FE7D27395F7B00B10848 /* UserController.swift */,
 				181CF6412738FFAB00204E9F /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181CF64E2739001700204E9F /* ArthouseInfo.swift in Sources */,
+				5141FEBF273A6CAD00B10848 /* UpdateDeleteController.swift in Sources */,
 				181CF63D2738FFA900204E9F /* ViewController.swift in Sources */,
 				5141FE7E27395F7B00B10848 /* UserController.swift in Sources */,
 				181CF6392738FFA900204E9F /* AppDelegate.swift in Sources */,
