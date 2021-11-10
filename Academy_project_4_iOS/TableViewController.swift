@@ -8,9 +8,12 @@
 import UIKit
 import SQLite3
 
+var items = SQLite3DB()
+
+var itemsImageFile = SQLite3DB()
+
 class TableViewController: UITableViewController {
 
-    
     @IBOutlet var ttListView: UITableView!
     
     override func viewDidLoad() {
@@ -50,7 +53,7 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let db = SQLite3DB()
-        db.moviequery(id: <#T##Int32#>)
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         

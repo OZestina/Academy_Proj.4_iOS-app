@@ -8,6 +8,9 @@
 import UIKit
 import SQLite3
 
+var loginid = ""
+var loginpw = ""
+
 class ViewController: UIViewController {
 
     @IBOutlet var idtext: UITextField!
@@ -39,12 +42,12 @@ class ViewController: UIViewController {
     @IBAction func loginbtn(_ sender: UIButton) {
         
         let db = SQLite3DB()
-        let id = NSString(utf8String: idtext.text!)!
-        let pw = NSString(utf8String: passwordtext.text!)!
+        let userid = idtext.text!
+        let userpw = passwordtext.text!
+
+        db.query(id: loginid as NSString, pw: loginpw as NSString)
         
-        if id == "" && pw == "" {
-            
-            db.query(id: id, pw: pw)
+        if userid == loginid && userpw == loginpw {
             
             guard let go = storyboard?.instantiateViewController(withIdentifier: "page3") else {
                 return

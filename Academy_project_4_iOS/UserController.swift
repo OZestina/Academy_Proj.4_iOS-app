@@ -81,6 +81,7 @@ class UserController: UIViewController {
 }
 
 class SQLite3DB {
+    
     let path: String = {
               let fm = FileManager.default
               return fm.urls(for:.libraryDirectory, in:.userDomainMask).last!
@@ -122,12 +123,15 @@ class SQLite3DB {
 
     }
     
-    let sql_query =  "select * from users;"
-    func query(id : NSString, pw : NSString) {
+    let sql_query =  "select * from users where id = ? and pw = ?;"
+    func query(id: NSString, pw: NSString) {
 
         let db = openDatabase()
         var con : OpaquePointer? = nil
-        // sql문 객체화
+        
+        var usersid = ""
+        var userspw = ""
+        
         if sqlite3_prepare_v2(db, sql_query, -1, &con, nil) == SQLITE_OK {
             print("sql문 객체화 성공")
 
@@ -139,11 +143,15 @@ class SQLite3DB {
                 let id = String(cString: i!)
                 let pw = String(cString: n!)
                 
-                
-                var row = "id: " + id + " pw: " + pw
-                print("row >> ", row)
+                usersid.append(id)
+                print(usersid)
+                userspw.append(pw)
+                print(userspw)
             }
-
+            loginid = usersid
+            
+            loginpw = userspw
+           
         } else {
 
             print("sql문 객체화 실패")
