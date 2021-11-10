@@ -22,19 +22,41 @@ class UserController: UIViewController {
     }
 
     @IBAction func joingo(_ sender: UIButton) {
+        let userid = NSString(utf8String: joinid.text!)!
+        let userpw = NSString(utf8String: joinpassword.text!)!
+        let usernum = NSString(utf8String: phonenumber.text!)!
+        let username = NSString(utf8String: joinname.text!)!
         
-        let id = joinid.text!
-        let pw = joinpassword.text!
-        let pw2 = joinpassword2.text!
-        let num = phonenumber.text!
-        let name = joinname.text!
-        
-        
-        
-        guard let go = storyboard?.instantiateViewController(withIdentifier: "main") else {
-            return
+        if userid != nil && userpw != nil && usernum != nil && username != nil {
+            
+            let db = SQLite3DB()
+            
+            db.insert(id: userid, pw: userpw, phone: usernum, name: username)
+            
+            let alert = UIAlertController(title: "회원가입 성공", message: "가입해주셔서 감사합니다", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "확인", style: .default) {
+                action in
+                
+                guard let go = self.storyboard?.instantiateViewController(withIdentifier: "main") as? ViewController else {
+                    return
+                }
+                self.present(go, animated: true, completion: nil)
+                
+            })
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
+            let alert = UIAlertController(title: "회원가입 실패", message: "다시 입력해주세요", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "확인", style: .default) {
+                action in
+                
+            })
+            self.present(alert, animated: true, completion: nil)
         }
-        self.present(go, animated: true, completion: nil)
+        
+        
         
         // 회원 db 생성
 //        let db = SQLite3DB()
@@ -57,7 +79,7 @@ class SQLite3DB {
     let path: String = {
               let fm = FileManager.default
               return fm.urls(for:.libraryDirectory, in:.userDomainMask).last!
-                       .appendingPathComponent("user.db").path
+                       .appendingPathComponent("momo.db").path
         }()
     
     func openDatabase() -> OpaquePointer? {
@@ -70,11 +92,36 @@ class SQLite3DB {
         return con
     }
     
+    // insert하는 함수
+    let sql_insert = "insert into contact values (?, ?, ?, ?);"
+    func insert(id: NSString, pw: NSString, phone: NSString, name: NSString) {
+        let db = openDatabase()
+        var con : OpaquePointer? = nil
+
+        if sqlite3_prepare_v2(db, sql_insert, -1, &con, nil) == SQLITE_OK {
+            sqlite3_bind_text(con, 1, id.utf8String, -1, nil)
+            sqlite3_bind_text(con, 2, pw.utf8String, -1, nil)
+            sqlite3_bind_text(con, 3, phone.utf8String, -1, nil)
+            sqlite3_bind_text(con, 4, name.utf8String, -1, nil)
+            print("sql문 객체화 성공")
+            if sqlite3_step(con) == SQLITE_DONE {
+                print("회원가입 성공")
+            } else {
+                print("회원가입 실패")
+            }
+        } else {
+            print("sql문 객체화 실패")
+        }
+        
+        sqlite3_finalize(con)
+
+    }
+    
     
     // 극장 테이블 생성
 //    let sql_create =
 //    """
-//create table users (
+//create table movie (
 //id int primary key not null,
 //title varchar(100) not null,
 //director varchar(100) not null,
@@ -97,20 +144,23 @@ class SQLite3DB {
 //);
 //"""
     
-    func createTable() {
-        let db = openDatabase()
-        var con : OpaquePointer? = nil
-        if sqlite3_prepare_v2(db, sql_create, -1, &con, nil) == SQLITE_OK {
-            print("sql문 객체화 성공")
-            if sqlite3_step(con) == SQLITE_DONE {
-                print("테이블 생성 성공")
-            } else {
-                print("테이블 생성 실패")
-            }
-        } else {
-            print("sql문 객체화 실패")
-        }
-        sqlite3_finalize(con)
-    }
+//    func createTable() {
+//        let db = openDatabase()
+//        var con : OpaquePointer? = nil
+//        if sqlite3_prepare_v2(db, sql_create, -1, &con, nil) == SQLITE_OK {
+//            print("sql문 객체화 성공")
+//            if sqlite3_step(con) == SQLITE_DONE {
+//                print("테이블 생성 성공")
+//            } else {
+//                print("테이블 생성 실패")
+//            }
+//        } else {
+//            print("sql문 객체화 실패")
+//        }
+//        sqlite3_finalize(con)
+//    }
+    
+    
+    
     
 }
