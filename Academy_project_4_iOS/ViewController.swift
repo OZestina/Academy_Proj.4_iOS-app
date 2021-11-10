@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SQLite3
 
 class ViewController: UIViewController {
 
@@ -37,16 +38,27 @@ class ViewController: UIViewController {
     
     @IBAction func loginbtn(_ sender: UIButton) {
         
-        let id = idtext.text!
-        let pw = passwordtext.text!
+        let db = SQLite3DB()
+        let id = NSString(utf8String: idtext.text!)!
+        let pw = NSString(utf8String: passwordtext.text!)!
         
-        if id == "" && pw == ""{
+        if id == "" && pw == "" {
+            
+            db.query(id: id, pw: pw)
+            
             guard let go = storyboard?.instantiateViewController(withIdentifier: "page3") else {
                 return
             }
             self.present(go, animated: true, completion: nil)
+
         } else {
+            let alert = UIAlertController(title: "Error", message: "로그인 실패 다시 입력해주세요", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "확인", style: .default) {
+                action in
             print("연결 실패")
+            })
+            self.present(alert, animated: true, completion: nil)
         }
         
     }
@@ -59,4 +71,3 @@ class ViewController: UIViewController {
     }
     
 }
-

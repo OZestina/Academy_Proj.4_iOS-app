@@ -32,7 +32,7 @@ class UserController: UIViewController {
         print(usernum)
         print(username)
         
-        if joinid.text != nil && joinpassword.text != nil && phonenumber.text != nil && joinname.text != nil {
+        if joinid.text != "" && joinpassword.text != "" && phonenumber.text != "" && joinname.text != "" {
             
             let alert = UIAlertController(title: "회원가입 성공", message: "가입해주셔서 감사합니다", preferredStyle: .alert)
             
@@ -48,7 +48,7 @@ class UserController: UIViewController {
             self.present(alert, animated: true, completion: nil)
             
             let db = SQLite3DB()
-
+            print("생성된 path는 ", db.path)
             db.insert(id: userid, pw: userpw, phone: usernum, name: username)
             
         } else {
@@ -98,7 +98,7 @@ class SQLite3DB {
     }
     
     // insert하는 함수
-    let sql_insert = "insert into aa values (?, ?, ?, ?);"
+    let sql_insert = "insert into users values (?, ?, ?, ?);"
     func insert(id: NSString, pw: NSString, phone: NSString, name: NSString) {
         let db = openDatabase()
         var con : OpaquePointer? = nil
@@ -121,6 +121,63 @@ class SQLite3DB {
         sqlite3_finalize(con)
 
     }
+    
+    let sql_query =  "select * from users;"
+    func query(id : NSString, pw : NSString) {
+
+        let db = openDatabase()
+        var con : OpaquePointer? = nil
+        // sql문 객체화
+        if sqlite3_prepare_v2(db, sql_query, -1, &con, nil) == SQLITE_OK {
+            print("sql문 객체화 성공")
+
+            while sqlite3_step(con) == SQLITE_ROW {
+                print("회원검색 성공")
+
+                let i = sqlite3_column_text(con, 0)
+                let n = sqlite3_column_text(con, 1)
+                let id = String(cString: i!)
+                let pw = String(cString: n!)
+                
+                
+                var row = "id: " + id + " pw: " + pw
+                print("row >> ", row)
+            }
+
+        } else {
+
+            print("sql문 객체화 실패")
+        }
+        // 실행이 성공하면 테이블이 생성되었습니다
+        sqlite3_finalize(con)
+    }
+    
+    let sql_moviequery =  "select * from movie;"
+    func moviequery(id : Int32) {
+
+        let db = openDatabase()
+        var con : OpaquePointer? = nil
+        // sql문 객체화
+        if sqlite3_prepare_v2(db, sql_moviequery, -1, &con, nil) == SQLITE_OK {
+            print("sql문 객체화 성공")
+
+            while sqlite3_step(con) == SQLITE_ROW {
+                print("회원검색 성공")
+
+                let i = sqlite3_column_text(con, 0)
+                let id = String(cString: i!)
+                
+                print("id >> ", id)
+            }
+
+        } else {
+
+            print("sql문 객체화 실패")
+        }
+        // 실행이 성공하면 테이블이 생성되었습니다
+        sqlite3_finalize(con)
+    }
+    
     
     
     // 극장 테이블 생성
