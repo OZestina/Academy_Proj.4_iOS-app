@@ -22,6 +22,7 @@
 		181CF6AA273A6FD300204E9F /* movie2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 181CF6A4273A6FD300204E9F /* movie2.jpg */; };
 		181CF6AB273A6FD300204E9F /* movie5.png in Resources */ = {isa = PBXBuildFile; fileRef = 181CF6A5273A6FD300204E9F /* movie5.png */; };
 		181CF6AC273A6FD300204E9F /* movie6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 181CF6A6273A6FD300204E9F /* movie6.jpg */; };
+		18B616A0273BC4250016B7AA /* WishTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6169F273BC4250016B7AA /* WishTableViewController.swift */; };
 		5141FE7E27395F7B00B10848 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141FE7D27395F7B00B10848 /* UserController.swift */; };
 		5141FE802739624B00B10848 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141FE7F2739624B00B10848 /* ListController.swift */; };
 		5141FEBF273A6CAD00B10848 /* UpdateDeleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */; };
@@ -45,6 +46,7 @@
 		181CF6A4273A6FD300204E9F /* movie2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie2.jpg; sourceTree = "<group>"; };
 		181CF6A5273A6FD300204E9F /* movie5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie5.png; sourceTree = "<group>"; };
 		181CF6A6273A6FD300204E9F /* movie6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie6.jpg; sourceTree = "<group>"; };
+		18B6169F273BC4250016B7AA /* WishTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishTableViewController.swift; sourceTree = "<group>"; };
 		5141FE7D27395F7B00B10848 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		5141FE7F2739624B00B10848 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeleteController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				181CF6A5273A6FD300204E9F /* movie5.png */,
 				181CF6A6273A6FD300204E9F /* movie6.jpg */,
 				181CF63E2738FFA900204E9F /* Main.storyboard */,
+				18B6169F273BC4250016B7AA /* WishTableViewController.swift */,
 				18167CA6273A79AC0086B877 /* Webpage.swift */,
 				5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */,
 				5141FE7F2739624B00B10848 /* ListController.swift */,
@@ -181,6 +184,7 @@
 			files = (
 				181CF64E2739001700204E9F /* ArthouseInfo.swift in Sources */,
 				5141FEBF273A6CAD00B10848 /* UpdateDeleteController.swift in Sources */,
+				18B616A0273BC4250016B7AA /* WishTableViewController.swift in Sources */,
 				181CF63D2738FFA900204E9F /* ViewController.swift in Sources */,
 				5141FE7E27395F7B00B10848 /* UserController.swift in Sources */,
 				181CF6392738FFA900204E9F /* AppDelegate.swift in Sources */,
