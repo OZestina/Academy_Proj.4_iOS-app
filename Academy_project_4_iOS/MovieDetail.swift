@@ -9,13 +9,28 @@ import UIKit
 
 class MovieDetail: UIViewController {
 
+    var filmIdx = -1
+    
+    @IBOutlet var filmImg: UIImageView!
+    @IBOutlet var filmDirector: UILabel!
+    @IBOutlet var filmAct: UILabel!
+    @IBOutlet var filmRun: UILabel!
+    @IBOutlet var filmGenre: UILabel!
+    @IBOutlet var filmReleased: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+
     }
     
 
+    func receiveIdx(_ idx: Int) {
+        filmIdx = idx
+    }
+    
     /*
     // MARK: - Navigation
 
