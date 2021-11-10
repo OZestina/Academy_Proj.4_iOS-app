@@ -27,11 +27,12 @@ class UserController: UIViewController {
         let usernum = NSString(utf8String: phonenumber.text!)!
         let username = NSString(utf8String: joinname.text!)!
         
-        if userid != nil && userpw != nil && usernum != nil && username != nil {
-            
-            let db = SQLite3DB()
-            
-            db.insert(id: userid, pw: userpw, phone: usernum, name: username)
+        print(userid)
+        print(userpw)
+        print(usernum)
+        print(username)
+        
+        if joinid.text != nil && joinpassword.text != nil && phonenumber.text != nil && joinname.text != nil {
             
             let alert = UIAlertController(title: "회원가입 성공", message: "가입해주셔서 감사합니다", preferredStyle: .alert)
             
@@ -45,6 +46,10 @@ class UserController: UIViewController {
                 
             })
             self.present(alert, animated: true, completion: nil)
+            
+            let db = SQLite3DB()
+
+            db.insert(id: userid, pw: userpw, phone: usernum, name: username)
             
         } else {
             let alert = UIAlertController(title: "회원가입 실패", message: "다시 입력해주세요", preferredStyle: .alert)
@@ -93,7 +98,7 @@ class SQLite3DB {
     }
     
     // insert하는 함수
-    let sql_insert = "insert into contact values (?, ?, ?, ?);"
+    let sql_insert = "insert into aa values (?, ?, ?, ?);"
     func insert(id: NSString, pw: NSString, phone: NSString, name: NSString) {
         let db = openDatabase()
         var con : OpaquePointer? = nil
