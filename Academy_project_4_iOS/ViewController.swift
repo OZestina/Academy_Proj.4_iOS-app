@@ -50,6 +50,9 @@ class ViewController: UIViewController {
         if result.0 == userid && result.1 == userpw {
             print("성공")
             
+            //로그인한 id 저장
+            id = userid
+            
             guard let go = storyboard?.instantiateViewController(withIdentifier: "tab") else {
                 return
             }

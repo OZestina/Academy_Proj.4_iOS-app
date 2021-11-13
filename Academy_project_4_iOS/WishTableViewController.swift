@@ -7,83 +7,63 @@
 
 import UIKit
 
+var wishes : Array<Array<Any>> = []
+
 class WishTableViewController: UITableViewController {
 
+    @IBOutlet var wishTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //navigation controller에 edit 버튼 생성
+//        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+    override func numberOfSections(in tableView: UITableView) -> Int { return 1 }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return wishes.count }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "wishCell", for: indexPath)
+        cell.textLabel?.text = wishes[(indexPath as NSIndexPath).row][2] as? String
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            let db = SQLite3DB()
+            let index = (indexPath as NSIndexPath).row
+            db.wishDelete(wishes[index][0] as! NSString, wishes[index][1] as! Int32)
+            wishes = db.wishRead(id as NSString)
+            //delete effect
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        } else if editingStyle == .insert { }
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        "찜 해제"
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    override func viewWillAppear(_ animated: Bool) {
+        wishTableView.reloadData()
     }
-    */
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "sgWishToDetail" {
+            let cell = sender as! UITableViewCell
+            let indexPath = self.wishTableView.indexPath(for: cell)
+            let idx = wishes[(indexPath! as NSIndexPath).row][1]
+            let movieDetail = segue.destination as! MovieDetail
+            movieDetail.receiveIdx(idx as! Int)
+        }
+        
     }
-    */
 
 }

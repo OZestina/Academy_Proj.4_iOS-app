@@ -159,7 +159,7 @@ class SQLite3DB {
     
     // 1) 찜하기 등록(create)
     let wish_create = "insert into wish values (?, ?, ?);"
-    func wishCreate(id: NSString, movieId: Int32, title: NSString) {
+    func wishCreate(_ id: NSString, _ movieId: Int32, _ title: NSString) {
         let db = openDatabase()
         var con : OpaquePointer? = nil
 
@@ -181,7 +181,7 @@ class SQLite3DB {
     
     //2)찜하기 해제(delete)
     let wish_delete = "delete from wish where id = ? and movieId = ?"
-    func wishDelete(id: NSString, movieId: Int32) {
+    func wishDelete(_ id: NSString, _ movieId: Int32) {
         let db = openDatabase()
         var con: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, wish_delete, -1, &con, nil) == SQLITE_OK {
@@ -200,7 +200,7 @@ class SQLite3DB {
     
     // 3)찜 리스트 불러오기(select)
     let wish_read = "select * from wish where id = ?"
-    func wishRead(id: NSString) -> Array<Array<Any>> {
+    func wishRead(_ id: NSString) -> Array<Array<Any>> {
         let db = openDatabase()
         var con: OpaquePointer? = nil
         //검색 내용 저장용 2차원 배열

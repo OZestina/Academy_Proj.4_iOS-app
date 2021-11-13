@@ -7,6 +7,8 @@
 
 import UIKit
 
+var id: String = ""
+
 class UpdateDeleteController: UIViewController {
 
     override func viewDidLoad() {
