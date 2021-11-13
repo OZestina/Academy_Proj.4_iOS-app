@@ -123,42 +123,7 @@ class SQLite3DB {
 
     }
     
-    let sql_query =  "select * from users where id = ? and pw = ?;"
-    func query(id: NSString, pw: NSString) {
-
-        let db = openDatabase()
-        var con : OpaquePointer? = nil
-        
-        var usersid = ""
-        var userspw = ""
-        
-        if sqlite3_prepare_v2(db, sql_query, -1, &con, nil) == SQLITE_OK {
-            print("sql문 객체화 성공")
-
-            while sqlite3_step(con) == SQLITE_ROW {
-                print("회원검색 성공")
-
-                let i = sqlite3_column_text(con, 0)
-                let n = sqlite3_column_text(con, 1)
-                let id = String(cString: i!)
-                let pw = String(cString: n!)
-                
-                usersid.append(id)
-                print(usersid)
-                userspw.append(pw)
-                print(userspw)
-            }
-            loginid = usersid
-            
-            loginpw = userspw
-           
-        } else {
-
-            print("sql문 객체화 실패")
-        }
-        // 실행이 성공하면 테이블이 생성되었습니다
-        sqlite3_finalize(con)
-    }
+    
     
     let sql_moviequery =  "select * from movie;"
     func moviequery(id : Int32) {
@@ -186,7 +151,85 @@ class SQLite3DB {
         sqlite3_finalize(con)
     }
     
+    let sql_query =  "select id, pw from users where id = ? and pw = ?;"
+    func query(id: NSString, pw: NSString) -> (String, String) {
+        
+        print(id)
+        print(pw)
+        
+        let db = openDatabase()
+        var con : OpaquePointer? = nil
+        
+        var usersid = ""
+        var userspw = ""
+        
+        if sqlite3_prepare_v2(db, sql_query, -1, &con, nil) == SQLITE_OK {
+            print("sql문 객체화 성공")
+            
+            sqlite3_bind_text(con, 1, id.utf8String, -1, nil)
+            sqlite3_bind_text(con, 2, pw.utf8String, -1, nil)
+            
+            if sqlite3_step(con) == SQLITE_ROW {
+                print("회원검색 성공")
+
+                let i = sqlite3_column_text(con, 0)
+                let n = sqlite3_column_text(con, 1)
+                usersid = String(cString: i!)
+                userspw = String(cString: n!)
+                
+                print(usersid)
+                print(userspw)
+                
+            }
+
+        } else {
+
+            print("sql문 객체화 실패")
+            
+        }
+        // 실행이 성공하면 테이블이 생성되었습니다
+        sqlite3_finalize(con)
+        return (usersid, userspw)
+    }
     
+    let sql_listquery =  "select title, date, imgFile from movie;"
+    func listquery() -> String {
+
+        let db = openDatabase()
+        var con : OpaquePointer? = nil
+        
+        var titleid = ""
+        var dateid = ""
+        var imgid = ""
+        
+        if sqlite3_prepare_v2(db, sql_listquery, -1, &con, nil) == SQLITE_OK {
+            print("sql문 객체화 성공")
+            
+            while sqlite3_step(con) == SQLITE_ROW {
+                print("제목검색 성공")
+                
+                let i = sqlite3_column_text(con, 1)
+                let n = sqlite3_column_text(con, 7)
+                let z = sqlite3_column_text(con, 8)
+                
+                titleid = String(cString: i!)
+                dateid = String(cString: n!)
+                imgid = String(cString: z!)
+                print(titleid)
+                print(dateid)
+                print(imgid)
+            }
+
+        } else {
+
+            print("sql문 객체화 실패")
+            
+        }
+        // 실행이 성공하면 테이블이 생성되었습니다
+        
+        sqlite3_finalize(con)
+        return titleid + dateid + imgid
+    }
     
     // 극장 테이블 생성
 //    let sql_create =
@@ -213,6 +256,16 @@ class SQLite3DB {
 //name char(255) not null
 //);
 //"""
+    
+    // 찜 목록 테이블
+//    let sql_create =
+//    """
+//    create table wish (
+//    id varchar,
+//    movieId int,
+//    title varchar
+//    );
+//    """
     
 //    func createTable() {
 //        let db = openDatabase()

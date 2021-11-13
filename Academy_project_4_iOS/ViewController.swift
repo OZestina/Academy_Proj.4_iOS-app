@@ -8,9 +8,6 @@
 import UIKit
 import SQLite3
 
-var loginid = ""
-var loginpw = ""
-
 class ViewController: UIViewController {
 
     @IBOutlet var idtext: UITextField!
@@ -45,15 +42,20 @@ class ViewController: UIViewController {
         let userid = idtext.text!
         let userpw = passwordtext.text!
 
-        db.query(id: loginid as NSString, pw: loginpw as NSString)
+        var result = db.query(id: NSString(string: userid), pw: NSString(string: userpw))
         
-        if userid == loginid && userpw == loginpw {
+        result.0
+        result.1
+    
+        
+        if result.0 == userid && result.1 == userpw {
+            print("성공")
             
             guard let go = storyboard?.instantiateViewController(withIdentifier: "page3") else {
                 return
             }
             self.present(go, animated: true, completion: nil)
-
+            
         } else {
             let alert = UIAlertController(title: "Error", message: "로그인 실패 다시 입력해주세요", preferredStyle: .alert)
 
@@ -74,3 +76,4 @@ class ViewController: UIViewController {
     }
     
 }
+
