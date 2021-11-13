@@ -45,7 +45,7 @@ class TableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sgDetail" {
-            print("sgDetail눌림")
+            //print("sgDetail눌림")
             let cell = sender as! UITableViewCell
             let indexPath = self.Ttableview.indexPath(for: cell)
             
