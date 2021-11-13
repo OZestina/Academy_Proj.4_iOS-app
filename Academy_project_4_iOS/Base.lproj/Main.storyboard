@@ -341,15 +341,26 @@
                             <outlet property="delegate" destination="e7j-7g-Ht8" id="AeQ-Pp-h3K"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" id="qJD-Ug-flp">
-                        <imageReference key="image" image="heart.fill" catalog="system" symbolScale="large"/>
-                        <color key="badgeColor" systemColor="systemGreenColor"/>
-                        <imageReference key="selectedImage" image="heart.fill" catalog="system" symbolScale="large"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="DC5-MJ-gCN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qw1-gf-pnt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3125" y="1158"/>
+            <point key="canvasLocation" x="3825" y="1158"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="x87-vz-B4j">
+            <objects>
+                <viewController id="vtu-3T-ZGc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AhG-Uj-n64">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0rn-En-URk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPb-pD-q93" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4507" y="1158"/>
         </scene>
         <!--Webpage-->
         <scene sceneID="aot-I8-6XR">
@@ -359,26 +370,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZN6-cI-MM9">
-                                <rect key="frame" x="371" y="9" width="35" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="xmark.circle" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnPageClose:" destination="kNE-og-GTB" eventType="touchUpInside" id="zni-PC-V1u"/>
-                                </connections>
-                            </button>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-Nd-S57">
-                                <rect key="frame" x="0.0" y="49" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Krx-X4-5If">
                                 <rect key="frame" x="0.0" y="769" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -410,6 +401,15 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MZa-6s-jJT"/>
                                 </items>
                             </toolbar>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-Nd-S57">
+                                <rect key="frame" x="0.0" y="49" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gmp-BS-Xmc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -787,7 +787,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9PP-77-qyh" kind="relationship" relationship="viewControllers" id="b9N-Zw-A0Y"/>
-                        <segue destination="e7j-7g-Ht8" kind="relationship" relationship="viewControllers" id="Mg7-fQ-fkx"/>
+                        <segue destination="3Kc-TS-gV8" kind="relationship" relationship="viewControllers" id="Mg7-fQ-fkx"/>
                         <segue destination="ZRD-NL-EWK" kind="relationship" relationship="viewControllers" id="xal-rn-FzZ"/>
                         <segue destination="CaU-IE-jTz" kind="relationship" relationship="viewControllers" id="qzZ-p2-LHe"/>
                     </connections>
@@ -795,6 +795,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2s-bA-BeJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="754" y="1158"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="C1r-Q8-8jh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Kc-TS-gV8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="qJD-Ug-flp">
+                        <imageReference key="image" image="heart.fill" catalog="system" symbolScale="large"/>
+                        <color key="badgeColor" systemColor="systemGreenColor"/>
+                        <imageReference key="selectedImage" image="heart.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="feK-dg-BM6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e7j-7g-Ht8" kind="relationship" relationship="rootViewController" id="h4C-kv-QfA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K62-XN-6Nz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3124.6376811594205" y="1157.8125"/>
         </scene>
     </scenes>
     <resources>
@@ -810,7 +833,6 @@
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="momo.jpeg" width="120" height="79.919998168945312"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="xmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
