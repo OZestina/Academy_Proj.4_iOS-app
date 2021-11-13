@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         if result.0 == userid && result.1 == userpw {
             print("성공")
             
-            guard let go = storyboard?.instantiateViewController(withIdentifier: "navigation") else {
+            guard let go = storyboard?.instantiateViewController(withIdentifier: "tab") else {
                 return
             }
             self.present(go, animated: true, completion: nil)
