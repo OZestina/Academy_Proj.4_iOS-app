@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+//        let db = SQLite3DB()
+//        movies = db.moviequery()
         
     }
     

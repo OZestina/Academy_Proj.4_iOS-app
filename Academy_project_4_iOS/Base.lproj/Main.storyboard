@@ -682,10 +682,10 @@
             </objects>
             <point key="canvasLocation" x="1854" y="86"/>
         </scene>
-        <!--List View Controller-->
+        <!--Table View2 Controller-->
         <scene sceneID="CyC-MM-0Pj">
             <objects>
-                <viewController storyboardIdentifier="page3" id="kiE-KH-c29" customClass="ListViewController" customModule="Academy_project_4_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page3" id="kiE-KH-c29" customClass="TableView2Controller" customModule="Academy_project_4_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ao-K5-vGQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -758,7 +758,7 @@
                                         <rect key="frame" x="0.0" y="50" width="414" height="724"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="L9C-IO-kK8">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="myCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="L9C-IO-kK8">
                                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L9C-IO-kK8" id="NBb-js-mid">
@@ -767,6 +767,10 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="kiE-KH-c29" id="qPe-Gi-3Ar"/>
+                                            <outlet property="delegate" destination="kiE-KH-c29" id="mfJ-0E-MT3"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -807,7 +811,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5QR-9c-fzD"/>
                     <connections>
-                        <outlet property="Ttableview" destination="erK-WI-nVj" id="Oeo-kt-wAH"/>
+                        <outlet property="Ttableview" destination="erK-WI-nVj" id="YsA-qx-rzv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIB-uA-xS1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
