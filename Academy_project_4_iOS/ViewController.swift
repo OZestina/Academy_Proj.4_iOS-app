@@ -43,11 +43,7 @@ class ViewController: UIViewController {
         let userpw = passwordtext.text!
 
         var result = db.query(id: NSString(string: userid), pw: NSString(string: userpw))
-        
-        result.0
-        result.1
-    
-        
+
         if result.0 == userid && result.1 == userpw {
             print("성공")
             

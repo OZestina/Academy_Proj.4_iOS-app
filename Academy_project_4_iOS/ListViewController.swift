@@ -48,7 +48,7 @@ class ListViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: UIButton) {
-        guard let go = storyboard?.instantiateViewController(withIdentifier: "main") else {
+        guard let go = storyboard?.instantiateViewController(withIdentifier: "login") else {
             return
         }
         self.present(go, animated: true, completion: nil)

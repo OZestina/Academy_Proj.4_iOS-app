@@ -39,7 +39,7 @@ class UserController: UIViewController {
             alert.addAction(UIAlertAction(title: "확인", style: .default) {
                 action in
                 
-                guard let go = self.storyboard?.instantiateViewController(withIdentifier: "main") as? ViewController else {
+                guard let go = self.storyboard?.instantiateViewController(withIdentifier: "login") as? ViewController else {
                     return
                 }
                 self.present(go, animated: true, completion: nil)
@@ -73,10 +73,7 @@ class UserController: UIViewController {
     
     
     @IBAction func joinno(_ sender: UIButton) {
-        guard let go = storyboard?.instantiateViewController(withIdentifier: "main") else {
-            return
-        }
-        self.present(go, animated: true, completion: nil)
+        dismiss(animated: , completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
 }
 
