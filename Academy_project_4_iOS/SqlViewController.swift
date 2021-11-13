@@ -28,7 +28,7 @@ class SQLite3DB {
     func openDatabase() -> OpaquePointer? {
         var con : OpaquePointer? = nil
         if sqlite3_open(path, &con) == SQLITE_OK {
-            print("연결 성공")
+            //print("연결 성공")
         } else {
             print("연결 실패")
         }
@@ -167,9 +167,9 @@ class SQLite3DB {
             sqlite3_bind_text(con, 1, id.utf8String, -1, nil)
             sqlite3_bind_int(con, 2, movieId)
             sqlite3_bind_text(con, 3, title.utf8String, -1, nil)
-            print("wish: sql문 객체화 성공")
+            //print("wish: sql문 객체화 성공")
             if sqlite3_step(con) == SQLITE_DONE {
-                print("찜하기 성공")
+                //print("찜하기 성공")
             } else {
                 print("찜하기 실패")
             }
@@ -188,7 +188,7 @@ class SQLite3DB {
             sqlite3_bind_text(con, 1, id.utf8String, -1, nil)
             sqlite3_bind_int(con, 2, movieId)
             if sqlite3_step(con) == SQLITE_DONE {
-                print("찜 해제 성공")
+                //print("찜 해제 성공")
             } else {
                 print("찜 해제 실패")
             }
@@ -220,7 +220,7 @@ class SQLite3DB {
             print("wish: sql문 객체화 실패_검색")
         }
         sqlite3_finalize(con)
-        print(results)
+        //print(results)
         return results
     }
     
