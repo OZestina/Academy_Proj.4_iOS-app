@@ -159,7 +159,7 @@ class SQLite3DB {
     
     // 1) 찜하기 등록(create)
     let wish_create = "insert into wish values (?, ?, ?);"
-    func wishCreate(_ id: NSString, _ movieId: Int32, _ title: NSString) {
+    func wishCreate(id: NSString, movieId: Int32, title: NSString) {
         let db = openDatabase()
         var con : OpaquePointer? = nil
 
@@ -180,7 +180,7 @@ class SQLite3DB {
     }
     
     //2)찜하기 해제(delete)
-    let wish_delete = "delete from wish where id = ? and movieId = ?"
+    let wish_delete = "delete from wish where id = ? and movieId = ?;"
     func wishDelete(_ id: NSString, _ movieId: Int32) {
         let db = openDatabase()
         var con: OpaquePointer? = nil
@@ -199,24 +199,28 @@ class SQLite3DB {
     }
     
     // 3)찜 리스트 불러오기(select)
-    let wish_read = "select * from wish where id = ?"
+    let wish_read = "select * from wish where id = ?;"
     func wishRead(_ id: NSString) -> Array<Array<Any>> {
         let db = openDatabase()
         var con: OpaquePointer? = nil
         //검색 내용 저장용 2차원 배열
         var results: Array<Array<Any>> = []
         if sqlite3_prepare_v2(db, wish_read, -1, &con, nil) == SQLITE_OK {
+            sqlite3_bind_text(con, 1, id.utf8String, -1, nil)
+            
             while sqlite3_step(con) == SQLITE_ROW {
                 let id = String(cString: sqlite3_column_text(con, 0)!)
                 let movieId = sqlite3_column_int(con, 1)
                 let title = String(cString: sqlite3_column_text(con, 2)!)
                 //검색된 행을 배열로 리턴배열에 추가
-                results.append([id, movieId, title])
+                let result : Array<Any> = [id, movieId, title]
+                results.append(result)
             }
         } else {
             print("wish: sql문 객체화 실패_검색")
         }
         sqlite3_finalize(con)
+        print(results)
         return results
     }
     

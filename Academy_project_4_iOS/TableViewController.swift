@@ -17,7 +17,7 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         let db = SQLite3DB()
         movies = db.moviequery()
-        wishes = db.wishRead(id: id as NSString)
+        wishes = db.wishRead(id as NSString)
         
         //테이블뷰 높이 설정
         self.tableView.rowHeight = 200.0

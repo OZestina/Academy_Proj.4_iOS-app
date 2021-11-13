@@ -19,6 +19,9 @@ class MovieDetail: UIViewController {
     @IBOutlet var filmGenre: UILabel!
     @IBOutlet var filmReleased: UILabel!
     
+    @IBOutlet var btnWish: UIButton!
+    @IBOutlet var btnWishDelete: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +33,43 @@ class MovieDetail: UIViewController {
         filmRun.text = movies[filmIdx][4] as? String
         filmGenre.text = movies[filmIdx][5] as? String
         filmReleased.text = movies[filmIdx][6] as? String
+        
+        btnWish.isHidden = false
+        btnWishDelete.isHidden = true
+        
+        let filmId = movies[filmIdx][0] as! Int32
+        if wishes.count > 0 {
+            for wish in wishes {
+                let movieIdx: Int32 = wish[1] as! Int32
+                if filmId == movieIdx {
+                    btnWish.isHidden = true
+                    btnWishDelete.isHidden = false
+                }
+            }
+        }
     }
-    
 
     func receiveIdx(_ idx: Int) {
         filmIdx = idx
     }
+    
+    @IBAction func createWish(_ sender: UIButton) {
+        let db = SQLite3DB()
+        db.wishCreate(id: id as NSString, movieId: movies[filmIdx][0] as! Int32, title: movies[filmIdx][1] as! NSString)
+        wishes = db.wishRead(id as NSString)
+        //버튼 숨김/보이기 처리
+        btnWish.isHidden = true
+        btnWishDelete.isHidden = false
+    }
+    @IBAction func deleteWish(_ sender: UIButton) {
+        let db = SQLite3DB()
+        db.wishDelete(id as NSString, movies[filmIdx][0] as! Int32)
+        wishes = db.wishRead(id as NSString)
+        //버튼 숨김/보이기 처리
+        btnWish.isHidden = false
+        btnWishDelete.isHidden = true
+    }
+    
     
     /*
     // MARK: - Navigation

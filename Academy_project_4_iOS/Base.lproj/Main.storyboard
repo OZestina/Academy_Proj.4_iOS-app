@@ -14,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="login" id="BYZ-38-t0r" customClass="ViewController" customModule="Academy_project_4_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZa-2I-KEn">
@@ -204,13 +204,6 @@
                                 <rect key="frame" x="32" y="110" width="350" height="378"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="183-nD-CUV">
-                                <rect key="frame" x="32" y="72" width="350" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="감독" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwA-AT-NEx">
                                 <rect key="frame" x="32" y="505" width="76" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -251,11 +244,6 @@
                                 <connections>
                                     <segue destination="kNE-og-GTB" kind="show" id="vDx-9S-Oc6"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkz-Ck-z08">
-                                <rect key="frame" x="347" y="76" width="21" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="heart" catalog="system"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vol-OV-Pla">
                                 <rect key="frame" x="125" y="511" width="207" height="21"/>
@@ -299,12 +287,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="183-nD-CUV">
+                                <rect key="frame" x="32" y="72" width="350" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkz-Ck-z08">
+                                <rect key="frame" x="351" y="71" width="31" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="heart" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="createWish:" destination="8Bu-Ag-kNf" eventType="touchUpInside" id="HEi-9v-dcv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jru-gb-hxh">
+                                <rect key="frame" x="351" y="71" width="31" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="heart.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="createWish:" destination="8Bu-Ag-kNf" eventType="touchUpInside" id="mpY-y3-sPN"/>
+                                    <action selector="deleteWish:" destination="8Bu-Ag-kNf" eventType="touchUpInside" id="hEs-DF-aUN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tll-d0-hd0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="상세 정보" id="z9J-9s-0Nm"/>
                     <connections>
+                        <outlet property="btnWish" destination="hkz-Ck-z08" id="lGg-FB-Sg4"/>
+                        <outlet property="btnWishDelete" destination="jru-gb-hxh" id="VaP-p2-DI1"/>
                         <outlet property="filmAct" destination="A9J-um-t4I" id="iBe-tD-sX7"/>
                         <outlet property="filmDirector" destination="vol-OV-Pla" id="4k3-pG-S67"/>
                         <outlet property="filmGenre" destination="AwE-DV-5q8" id="RAV-lR-PL0"/>
@@ -316,9 +334,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZI-qI-GIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3125" y="504"/>
+            <point key="canvasLocation" x="3124.6376811594205" y="503.57142857142856"/>
         </scene>
-        <!--Wish Table View Controller-->
+        <!--영화 찜 목록-->
         <scene sceneID="d9T-L3-clP">
             <objects>
                 <tableViewController storyboardIdentifier="wishList" id="e7j-7g-Ht8" customClass="WishTableViewController" customModule="Academy_project_4_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -333,13 +351,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8t9-tm-4AY" id="iu1-3X-8hD">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nB0-lq-5uR">
-                                            <rect key="frame" x="11" y="8" width="28" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="tintColor" systemColor="systemGreenColor"/>
-                                        </imageView>
-                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="8Bu-Ag-kNf" kind="show" identifier="sgWishToDetail" id="iF1-rW-zj0"/>
@@ -351,7 +362,7 @@
                             <outlet property="delegate" destination="e7j-7g-Ht8" id="AeQ-Pp-h3K"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="DC5-MJ-gCN"/>
+                    <navigationItem key="navigationItem" title="영화 찜 목록" id="DC5-MJ-gCN"/>
                     <connections>
                         <outlet property="wishTableView" destination="yxQ-53-hva" id="KSs-SD-2wO"/>
                     </connections>
@@ -794,6 +805,7 @@
                 <tabBarController storyboardIdentifier="tab" automaticallyAdjustsScrollViewInsets="NO" id="7xt-20-Iwy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8sJ-p1-Jik">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" systemColor="systemGreenColor"/>

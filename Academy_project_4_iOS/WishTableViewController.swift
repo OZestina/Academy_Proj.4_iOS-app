@@ -59,9 +59,9 @@ class WishTableViewController: UITableViewController {
         if segue.identifier == "sgWishToDetail" {
             let cell = sender as! UITableViewCell
             let indexPath = self.wishTableView.indexPath(for: cell)
-            let idx = wishes[(indexPath! as NSIndexPath).row][1]
+            let idx : Int32 = wishes[(indexPath! as NSIndexPath).row][1] as! Int32
             let movieDetail = segue.destination as! MovieDetail
-            movieDetail.receiveIdx(idx as! Int)
+            movieDetail.receiveIdx(Int(idx))
         }
         
     }
