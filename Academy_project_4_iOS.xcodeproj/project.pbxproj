@@ -24,6 +24,7 @@
 		181CF6AC273A6FD300204E9F /* movie6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 181CF6A6273A6FD300204E9F /* movie6.jpg */; };
 		18B616A0273BC4250016B7AA /* WishTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6169F273BC4250016B7AA /* WishTableViewController.swift */; };
 		18B616AD273FE0590016B7AA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B616AC273FE0590016B7AA /* TableViewController.swift */; };
+		18B616B1273FFF9D0016B7AA /* momo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18B616B0273FFF9A0016B7AA /* momo.jpeg */; };
 		5141FE7E27395F7B00B10848 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141FE7D27395F7B00B10848 /* UserController.swift */; };
 		5141FEBF273A6CAD00B10848 /* UpdateDeleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */; };
 		51A0F876273F95240069942A /* SqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0F875273F95240069942A /* SqlViewController.swift */; };
@@ -49,6 +50,7 @@
 		181CF6A6273A6FD300204E9F /* movie6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie6.jpg; sourceTree = "<group>"; };
 		18B6169F273BC4250016B7AA /* WishTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishTableViewController.swift; sourceTree = "<group>"; };
 		18B616AC273FE0590016B7AA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		18B616B0273FFF9A0016B7AA /* momo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = momo.jpeg; sourceTree = "<group>"; };
 		5141FE7D27395F7B00B10848 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeleteController.swift; sourceTree = "<group>"; };
 		51A0F875273F95240069942A /* SqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				181CF6A3273A6FD300204E9F /* movie1.jpg */,
 				181CF6A4273A6FD300204E9F /* movie2.jpg */,
 				181CF6A1273A6FD300204E9F /* movie3.jpg */,
+				18B616B0273FFF9A0016B7AA /* momo.jpeg */,
 				181CF6A2273A6FD300204E9F /* movie4.jpg */,
 				181CF6A5273A6FD300204E9F /* movie5.png */,
 				181CF6A6273A6FD300204E9F /* movie6.jpg */,
@@ -173,6 +176,7 @@
 				181CF6452738FFAB00204E9F /* LaunchScreen.storyboard in Resources */,
 				181CF6422738FFAB00204E9F /* Assets.xcassets in Resources */,
 				181CF6AA273A6FD300204E9F /* movie2.jpg in Resources */,
+				18B616B1273FFF9D0016B7AA /* momo.jpeg in Resources */,
 				181CF6A9273A6FD300204E9F /* movie1.jpg in Resources */,
 				181CF6402738FFA900204E9F /* Main.storyboard in Resources */,
 			);
