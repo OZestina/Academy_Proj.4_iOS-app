@@ -75,7 +75,7 @@ class SQLite3DB {
             print("sql문 객체화 성공")
 
             while sqlite3_step(con) == SQLITE_ROW {
-                print("aaa-------- 성공")
+//                print("aaa-------- 성공")
 
                 let id = sqlite3_column_int(con, 0)
                 let title1 = sqlite3_column_text(con, 1)
@@ -98,7 +98,7 @@ class SQLite3DB {
                 let result : Array<Any> = [id, title, director, actor, time, genre, date, imgFile]
                 
                 results.append(result)
-                print(results)
+//                print(results)
                 
             }
 

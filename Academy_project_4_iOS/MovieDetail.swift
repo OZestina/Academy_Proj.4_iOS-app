@@ -11,6 +11,7 @@ class MovieDetail: UIViewController {
 
     var filmIdx = -1
     
+    @IBOutlet var filmTitle: UILabel!
     @IBOutlet var filmImg: UIImageView!
     @IBOutlet var filmDirector: UILabel!
     @IBOutlet var filmAct: UILabel!
@@ -21,9 +22,14 @@ class MovieDetail: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-
+        filmTitle.text = movies[filmIdx][1] as? String
+        filmImg.image = UIImage(named: movies[filmIdx][7] as! String)
+        filmDirector.text = movies[filmIdx][2] as? String
+        filmAct.text = movies[filmIdx][3] as? String
+        filmRun.text = movies[filmIdx][4] as? String
+        filmGenre.text = movies[filmIdx][5] as? String
+        filmReleased.text = movies[filmIdx][6] as? String
     }
     
 

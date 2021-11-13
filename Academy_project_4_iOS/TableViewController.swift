@@ -2,85 +2,77 @@
 //  TableViewController.swift
 //  Academy_project_4_iOS
 //
-//  Created by kwonsoonsun on 2021/11/10.
+//  Created by Apple on 2021/11/13.
 //
 
 import UIKit
-import SQLite3
 
-var items = SQLite3DB()
-
-var itemsImageFile = SQLite3DB()
+var movies : Array<Array<Any>> = []
 
 class TableViewController: UITableViewController {
 
-    @IBOutlet var ttListView: UITableView!
-    
+    @IBOutlet var Ttableview: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let db = SQLite3DB()
+        movies = db.moviequery()
+        self.tableView.rowHeight = 200.0
+        //        self.Ttableview.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 6
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return movies.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+
+        cell.textLabel?.text = movies[(indexPath as NSIndexPath).row][1] as? String
+        cell.imageView?.image = UIImage(named: movies[(indexPath as NSIndexPath).row][7] as! String)
+        
+        return cell
+
+
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sgDetail" {
+            print("sgDetail눌림")
+            let cell = sender as! UITableViewCell
+            let indexPath = self.Ttableview.indexPath(for: cell)
+            
+            let movieView = segue.destination as! MovieDetail
+            movieView.receiveIdx((indexPath! as NSIndexPath).row)
+            
+
+        }
+    }
+
+
+    @IBAction func btnUpDel(_ sender: UIButton) {
+
+    }
+
+    @IBAction func logout(_ sender: UIButton) {
+        guard let go = storyboard?.instantiateViewController(withIdentifier: "login") else {
+            return
+        }
+        self.present(go, animated: true, completion: nil)
+    }
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let db = SQLite3DB()
-        
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "sgDetail" {
-            let cell = sender as! UITableViewCell
-            let indexPath = self.ttListView.indexPath(for: cell)
-            let detailView = segue.destination as! MovieDetail
-            //detailView.receiveIdx()
-        
-    }
-
-    }
-    
-    @IBAction func btnlogout(_ sender: UIButton) {
-        guard let go = storyboard?.instantiateViewController(withIdentifier: "main") else {
-            return
-        }
-        self.present(go, animated: true, completion: nil)
-    }
-    
-    @IBAction func btnupdel(_ sender: UIButton) {
-        guard let go = storyboard?.instantiateViewController(withIdentifier: "page4") else {
-            return
-        }
-        self.present(go, animated: true, completion: nil)
-    }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -117,7 +109,14 @@ class TableViewController: UITableViewController {
     }
     */
 
-    
-    
-}
+    /*
+    // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

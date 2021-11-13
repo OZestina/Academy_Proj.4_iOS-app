@@ -37,6 +37,8 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
     @IBAction func loginbtn(_ sender: UIButton) {
         
         let db = SQLite3DB()
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
         if result.0 == userid && result.1 == userpw {
             print("성공")
             
-            guard let go = storyboard?.instantiateViewController(withIdentifier: "page3") else {
+            guard let go = storyboard?.instantiateViewController(withIdentifier: "navigation") else {
                 return
             }
             self.present(go, animated: true, completion: nil)
@@ -65,12 +67,12 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func joinbtn(_ sender: UIButton) {
-        guard let go = storyboard?.instantiateViewController(withIdentifier: "page2") else {
-            return
-        }
-        self.present(go, animated: true, completion: nil)
-    }
+//    @IBAction func joinbtn(_ sender: UIButton) {
+//        guard let go = storyboard?.instantiateViewController(withIdentifier: "page2") else {
+//            return
+//        }
+//        self.present(go, animated: true, completion: nil)
+//    }
     
 }
 

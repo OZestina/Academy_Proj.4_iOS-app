@@ -23,11 +23,10 @@
 		181CF6AB273A6FD300204E9F /* movie5.png in Resources */ = {isa = PBXBuildFile; fileRef = 181CF6A5273A6FD300204E9F /* movie5.png */; };
 		181CF6AC273A6FD300204E9F /* movie6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 181CF6A6273A6FD300204E9F /* movie6.jpg */; };
 		18B616A0273BC4250016B7AA /* WishTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6169F273BC4250016B7AA /* WishTableViewController.swift */; };
+		18B616AD273FE0590016B7AA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B616AC273FE0590016B7AA /* TableViewController.swift */; };
 		5141FE7E27395F7B00B10848 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141FE7D27395F7B00B10848 /* UserController.swift */; };
 		5141FEBF273A6CAD00B10848 /* UpdateDeleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */; };
-		51A0F874273F83340069942A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0F873273F83340069942A /* ListViewController.swift */; };
 		51A0F876273F95240069942A /* SqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0F875273F95240069942A /* SqlViewController.swift */; };
-		51A0F878273FAE150069942A /* TableView2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0F877273FAE150069942A /* TableView2Controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,11 +48,10 @@
 		181CF6A5273A6FD300204E9F /* movie5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie5.png; sourceTree = "<group>"; };
 		181CF6A6273A6FD300204E9F /* movie6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie6.jpg; sourceTree = "<group>"; };
 		18B6169F273BC4250016B7AA /* WishTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishTableViewController.swift; sourceTree = "<group>"; };
+		18B616AC273FE0590016B7AA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5141FE7D27395F7B00B10848 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeleteController.swift; sourceTree = "<group>"; };
-		51A0F873273F83340069942A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		51A0F875273F95240069942A /* SqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlViewController.swift; sourceTree = "<group>"; };
-		51A0F877273FAE150069942A /* TableView2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView2Controller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +94,7 @@
 				181CF6A5273A6FD300204E9F /* movie5.png */,
 				181CF6A6273A6FD300204E9F /* movie6.jpg */,
 				181CF63E2738FFA900204E9F /* Main.storyboard */,
-				51A0F877273FAE150069942A /* TableView2Controller.swift */,
-				51A0F873273F83340069942A /* ListViewController.swift */,
+				18B616AC273FE0590016B7AA /* TableViewController.swift */,
 				18B6169F273BC4250016B7AA /* WishTableViewController.swift */,
 				18167CA6273A79AC0086B877 /* Webpage.swift */,
 				5141FEBE273A6CAD00B10848 /* UpdateDeleteController.swift */,
@@ -194,11 +191,10 @@
 				18B616A0273BC4250016B7AA /* WishTableViewController.swift in Sources */,
 				181CF63D2738FFA900204E9F /* ViewController.swift in Sources */,
 				5141FE7E27395F7B00B10848 /* UserController.swift in Sources */,
-				51A0F878273FAE150069942A /* TableView2Controller.swift in Sources */,
 				181CF6392738FFA900204E9F /* AppDelegate.swift in Sources */,
+				18B616AD273FE0590016B7AA /* TableViewController.swift in Sources */,
 				18167CA7273A79AC0086B877 /* Webpage.swift in Sources */,
 				181CF63B2738FFA900204E9F /* SceneDelegate.swift in Sources */,
-				51A0F874273F83340069942A /* ListViewController.swift in Sources */,
 				18167CA4273A79850086B877 /* MovieDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
