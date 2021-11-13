@@ -22,10 +22,10 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
     }
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 6
-//    }
-//
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 6
+    }
+
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return
 //    }
@@ -33,14 +33,14 @@ class ListViewController: UIViewController {
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        return
 //    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "sgDetail" {
-//            let cell = sender as! UITableViewCell
-//            let indexPath = self.Ttableview.indexPath(for: cell)
-//
-//    }
-//}
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sgDetail" {
+            let cell = sender as! UITableViewCell
+            let indexPath = self.Ttableview.indexPath(for: cell)
+
+    }
+}
     
     
     @IBAction func btnUpDel(_ sender: UIButton) {

@@ -73,7 +73,7 @@ class UserController: UIViewController {
     
     
     @IBAction func joinno(_ sender: UIButton) {
-        dismiss(animated: , completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        dismiss(animated: true, completion: nil)
     }
 }
 
