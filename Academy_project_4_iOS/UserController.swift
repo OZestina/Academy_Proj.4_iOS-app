@@ -70,6 +70,33 @@ class UserController: UIViewController {
         
         
     }
+    @IBAction func btnclick(_ sender: UIButton) {
+        let userpw = joinpassword.text!
+        let userpw2 = joinpassword2.text!
+        
+        print(userpw)
+        print(userpw2)
+        
+        if userpw == userpw2 {
+            let alert = UIAlertController(title: "비밀번호 같음", message: "계속 진행해주세요", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "확인", style: .default) {
+                action in
+                
+            })
+            
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "비밀번호 다름", message: "비밀번호를 다시 설정해주세요", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "확인", style: .default) {
+                action in
+                
+            })
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+}
     
     @IBAction func joinno(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

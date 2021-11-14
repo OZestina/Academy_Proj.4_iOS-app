@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var idtext: UITextField!
     @IBOutlet var passwordtext: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,20 +22,20 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func autologin(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func didAutoLogin(_ sender: UIButton) {
-        sender.isSelected.toggle()
-    }
+
     
     @IBAction func idfind(_ sender: UIButton) {
-        
+        guard let go = storyboard?.instantiateViewController(withIdentifier: "findV") else {
+            return
+        }
+        self.present(go, animated: true, completion: nil)
     }
     
     @IBAction func passwordfind(_ sender: UIButton) {
-        
+        guard let go = storyboard?.instantiateViewController(withIdentifier: "findV") else {
+            return
+        }
+        self.present(go, animated: true, completion: nil)
     }
     
     
@@ -44,7 +45,9 @@ class ViewController: UIViewController {
         let db = SQLite3DB()
         let userid = idtext.text!
         let userpw = passwordtext.text!
-
+        
+        print(db.path)
+        
         var result = db.query(id: NSString(string: userid), pw: NSString(string: userpw))
 
         if result.0 == userid && result.1 == userpw {
@@ -56,6 +59,7 @@ class ViewController: UIViewController {
             guard let go = storyboard?.instantiateViewController(withIdentifier: "tab") else {
                 return
             }
+
             self.present(go, animated: true, completion: nil)
             
         } else {
@@ -70,6 +74,8 @@ class ViewController: UIViewController {
         
     }
     
+
+
 //    @IBAction func joinbtn(_ sender: UIButton) {
 //        guard let go = storyboard?.instantiateViewController(withIdentifier: "page2") else {
 //            return
