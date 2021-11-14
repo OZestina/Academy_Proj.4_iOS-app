@@ -8,6 +8,9 @@
 import UIKit
 import SQLite3
 
+var userids = ""
+var userpws = ""
+
 class SqlViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -157,13 +160,10 @@ class SQLite3DB {
     }
     
     let sql_idquery =  "select id from users where phone = ? and name = ?;"
-    func idquery(phone : NSString, name : NSString) -> (String, String) {
+    func idquery(phone : NSString, name : NSString) -> String {
 
         let db = openDatabase()
         var con : OpaquePointer? = nil
-        
-        var userphone = ""
-        var username = ""
         
         if sqlite3_prepare_v2(db, sql_idquery, -1, &con, nil) == SQLITE_OK {
             print("sql문 객체화 성공")
@@ -174,11 +174,9 @@ class SQLite3DB {
             if sqlite3_step(con) == SQLITE_ROW {
                 print("회원검색 성공")
 
-                let i = sqlite3_column_text(con, 1)
-                let n = sqlite3_column_text(con, 2)
-                userphone = String(cString: i!)
-                username = String(cString: n!)
-      
+                let i = sqlite3_column_text(con, 0)
+                userids = String(cString: i!)
+                print(userids)
             }
 
         } else {
@@ -188,7 +186,38 @@ class SQLite3DB {
         }
         // 실행이 성공하면 테이블이 생성되었습니다
         sqlite3_finalize(con)
-        return (userphone, username)
+        return userids
+    }
+    
+    let sql_pwquery =  "select pw from users where id = ? and phone = ? and name = ?;"
+    func pwquery(id : NSString, phone : NSString, name : NSString) -> String {
+
+        let db = openDatabase()
+        var con : OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db, sql_pwquery, -1, &con, nil) == SQLITE_OK {
+            print("sql문 객체화 성공")
+            
+            sqlite3_bind_text(con, 1, id.utf8String, -1, nil)
+            sqlite3_bind_text(con, 2, phone.utf8String, -1, nil)
+            sqlite3_bind_text(con, 3, name.utf8String, -1, nil)
+            
+            if sqlite3_step(con) == SQLITE_ROW {
+                print("회원검색 성공")
+
+                let i = sqlite3_column_text(con, 0)
+                userpws = String(cString: i!)
+                print(userpws)
+            }
+
+        } else {
+
+            print("sql문 객체화 실패")
+            
+        }
+        // 실행이 성공하면 테이블이 생성되었습니다
+        sqlite3_finalize(con)
+        return userpws
     }
     
     let sql_query =  "select id, pw from users where id = ? and pw = ?;"
