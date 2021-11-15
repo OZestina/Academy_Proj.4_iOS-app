@@ -3,17 +3,17 @@ iOS Application for independent film theatre (ArtHouse Momo, [아트하우스 �
 
 *****  
 
-**프로젝트 설명**
-> 아트하우스 모모 iOS 애플리케이션
-Sqlite, 테이블 뷰 및 맵 뷰를 적용한 스위프트 기반 영화관 애플리케이션 구현 (iOS 애플리케이션) 
+## **프로젝트 설명**
+**아트하우스 모모 iOS 애플리케이션**
+- Sqlite, 테이블 뷰 및 맵 뷰를 적용한 스위프트 기반 영화관 애플리케이션 구현 (iOS 애플리케이션) 
 
-**사용 언어 & 기술 & 도구**
-> Language: Swift
-> IDE: Xcode 
-> DB: Sqlite  
-> 협업툴: Github (CI/CD)
+## **사용 언어 & 기술 & 도구**
+   - Language: Swift
+   - IDE: Xcode 
+   - DB: Sqlite  
+   - 협업툴: Github (CI/CD)
 
-**애플리케이션 스토리보드 화면**  
+## **애플리케이션 스토리보드 화면**  
 <img width="70%" src="https://user-images.githubusercontent.com/72402916/141800974-ea292105-ce23-45b8-be7e-d51ae0e7239e.PNG"/>
 
 ## **구현 기능**
@@ -28,7 +28,7 @@ Sqlite, 테이블 뷰 및 맵 뷰를 적용한 스위프트 기반 영화관 애
 5. DB (Sqlite3)
    - 회원정보, 영화정보 및 찜 목록을 Sqlite로 관리  
 
-### **애플리케이션 메뉴**
+## **애플리케이션 메뉴**
 1. 회원 -------------------------------------- 
    - 로그인, 회원가입, 회원정보 수정 및 회원 탈퇴 (Sqlite3)   
    
