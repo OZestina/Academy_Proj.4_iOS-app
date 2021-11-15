@@ -30,6 +30,7 @@
 		51A0F876273F95240069942A /* SqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0F875273F95240069942A /* SqlViewController.swift */; };
 		51A0F87A2740F1380069942A /* FinePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A0F8792740F1380069942A /* FinePage.swift */; };
 		51A0F880274262080069942A /* momologo.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A0F87F274262070069942A /* momologo.png */; };
+		51A0F882274263530069942A /* momologo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 51A0F881274263520069942A /* momologo2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		51A0F875273F95240069942A /* SqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqlViewController.swift; sourceTree = "<group>"; };
 		51A0F8792740F1380069942A /* FinePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinePage.swift; sourceTree = "<group>"; };
 		51A0F87F274262070069942A /* momologo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = momologo.png; path = ../../../../Downloads/momologo.png; sourceTree = "<group>"; };
+		51A0F881274263520069942A /* momologo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = momologo2.png; path = ../../../momologo2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		181CF6372738FFA900204E9F /* Academy_project_4_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				51A0F881274263520069942A /* momologo2.png */,
 				51A0F87F274262070069942A /* momologo.png */,
 				181CF6382738FFA900204E9F /* AppDelegate.swift */,
 				181CF63A2738FFA900204E9F /* SceneDelegate.swift */,
@@ -182,6 +185,7 @@
 				51A0F880274262080069942A /* momologo.png in Resources */,
 				181CF6452738FFAB00204E9F /* LaunchScreen.storyboard in Resources */,
 				181CF6422738FFAB00204E9F /* Assets.xcassets in Resources */,
+				51A0F882274263530069942A /* momologo2.png in Resources */,
 				181CF6AA273A6FD300204E9F /* movie2.jpg in Resources */,
 				18B616B1273FFF9D0016B7AA /* momo.jpeg in Resources */,
 				181CF6A9273A6FD300204E9F /* movie1.jpg in Resources */,
