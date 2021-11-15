@@ -430,21 +430,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="아트하우스 모모" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vii-ON-MRj">
-                                <rect key="frame" x="113" y="55" width="189" height="36"/>
+                                <rect key="frame" x="113" y="25" width="189" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이화여자대학교 내 &quot;ECC 건물&quot; 내 위치" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsE-hn-1nF">
-                                <rect key="frame" x="24" y="263" width="366" height="31"/>
+                                <rect key="frame" x="24" y="222" width="366" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="characterWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiJ-Kf-yCt">
-                                <rect key="frame" x="24" y="289" width="366" height="112"/>
+                                <rect key="frame" x="24" y="248" width="366" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">- 이화여대 정문에서 바로 보이는 ECC (이화캠퍼스복합단지) 건물의 "게이트 3"으로 들어온 후 좌측을 향해 끝까지 오세요.
 - 후문에서 들어오실 때에는 학생회관을 좌측에 끼고 걸어오신 뒤 ECC 건물 B4층으로 오시면 됩니다.</string>
@@ -453,11 +453,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="momo.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-b3-Pu7">
-                                <rect key="frame" x="76" y="99" width="263" height="156"/>
+                                <rect key="frame" x="76" y="58" width="263" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ihr-el-jdQ">
-                                <rect key="frame" x="20" y="400" width="374" height="396"/>
+                                <rect key="frame" x="20" y="359" width="374" height="380"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
