@@ -61,7 +61,7 @@ class WishTableViewController: UITableViewController {
             let indexPath = self.wishTableView.indexPath(for: cell)
             let idx : Int32 = wishes[(indexPath! as NSIndexPath).row][1] as! Int32
             let movieDetail = segue.destination as! MovieDetail
-            movieDetail.receiveIdx(Int(idx))
+            movieDetail.receiveIdx(Int(idx)-1)
         }
         
     }

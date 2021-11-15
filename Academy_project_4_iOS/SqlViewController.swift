@@ -109,7 +109,7 @@ class SQLite3DB {
     }
     
     
-    let sql_moviequery =  "select * from movie;"
+    let sql_moviequery =  "select * from movie order by id;"
     func moviequery() -> Array<Array<Any>> {
 
         let db = openDatabase()
