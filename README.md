@@ -16,7 +16,7 @@ Sqlite, 테이블 뷰 및 맵 뷰를 적용한 스위프트 기반 영화관 애
 **애플리케이션 스토리보드 화면**  
 <img width="70%" src="https://user-images.githubusercontent.com/72402916/141800974-ea292105-ce23-45b8-be7e-d51ae0e7239e.PNG"/>
 
-##**구현 기능**
+## **구현 기능**
 1. Tab Bar Controller 
    - 영화리스트, 찜 목록, 영화관 정보, 회원메뉴 제공  
 2. Navigation Controller & Table View
@@ -28,7 +28,7 @@ Sqlite, 테이블 뷰 및 맵 뷰를 적용한 스위프트 기반 영화관 애
 5. DB (Sqlite3)
    - 회원정보, 영화정보 및 찜 목록을 Sqlite로 관리  
 
-###**애플리케이션 메뉴**
+### **애플리케이션 메뉴**
 1. 회원 -------------------------------------- 
    - 로그인, 회원가입, 회원정보 수정 및 회원 탈퇴 (Sqlite3)   
    
