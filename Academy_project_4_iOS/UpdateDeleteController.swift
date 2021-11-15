@@ -31,6 +31,13 @@ class UpdateDeleteController: UIViewController {
         
         db.userupdate(id: id, pw: pw, phone: number, name: name)
         
+        let alert = UIAlertController(title: "확인 결과", message: "수정 되었습니다", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "확인", style: .default) {
+            action in
+        print("수정 확인")
+        })
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func userdel(_ sender: UIButton) {
@@ -39,12 +46,16 @@ class UpdateDeleteController: UIViewController {
         
         db.userdelete(id: id)
         
+        let alert = UIAlertController(title: "확인 결과", message: "삭제 되었습니다", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "확인", style: .default) {
+            action in
+        print("삭제 확인")
+        })
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func logout(_ sender: UIButton) {
-        guard let go = storyboard?.instantiateViewController(withIdentifier: "login") else {
-            return
-        }
-        self.present(go, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

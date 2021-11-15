@@ -29,8 +29,10 @@ class FinePage: UIViewController {
         let name = finname.text!
         
         var res = db.idquery(phone: NSString(string: num), name: NSString(string: name))
-        
+
+        finid.text = res
         userids = res
+
         
             let alert = UIAlertController(title: "확인 결과", message: "아이디는 " + userids + "입니다", preferredStyle: .alert)
 
@@ -50,16 +52,19 @@ class FinePage: UIViewController {
         let name = finname.text!
         
         var res = db.pwquery(id: NSString(string: id), phone: NSString(string: num), name: NSString(string: name))
-        
+
+        finpw.text = res
         userpws = res
         
+
             let alert = UIAlertController(title: "확인 결과", message: "비밀번호는 " + userpws + "입니다", preferredStyle: .alert)
 
             alert.addAction(UIAlertAction(title: "확인", style: .default) {
                 action in
             print("비밀번호 확인")
+                self.dismiss(animated: true)
             })
             self.present(alert, animated: true, completion: nil)
-    }
+        }
     
 }

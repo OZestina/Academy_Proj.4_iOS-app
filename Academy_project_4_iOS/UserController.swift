@@ -39,10 +39,7 @@ class UserController: UIViewController {
             alert.addAction(UIAlertAction(title: "확인", style: .default) {
                 action in
                 
-                guard let go = self.storyboard?.instantiateViewController(withIdentifier: "login") as? ViewController else {
-                    return
-                }
-                self.present(go, animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
                 
             })
             self.present(alert, animated: true, completion: nil)

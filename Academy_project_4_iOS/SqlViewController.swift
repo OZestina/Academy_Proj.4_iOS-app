@@ -11,6 +11,9 @@ import SQLite3
 var userids = ""
 var userpws = ""
 
+var userphones = ""
+var usernames = ""
+
 class SqlViewController: UIViewController {
 
     override func viewDidLoad() {
