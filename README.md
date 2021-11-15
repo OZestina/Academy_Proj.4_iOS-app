@@ -1,5 +1,5 @@
 # Academy_project_4_iOS
-iOS Application for independent film theatre (ArtHouse Momo, [아트하우스 모모](https://www.arthousemomo.co.kr/, "google link"))
+iOS Application for independent film theatre (ArtHouse Momo, [아트하우스 모모](https://www.arthousemomo.co.kr/))
 
 *****  
 
